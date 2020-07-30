@@ -8,7 +8,7 @@ namespace Siesta2
 {
     public class Recipe
     {
-        public int id { get; set; }
+        public int Id_Recipe { get; set; }
         public string Name { get; set; }
         public int PreepTime { get; set; }
         public string Instruction { get; set; }
