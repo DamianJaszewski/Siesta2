@@ -9,9 +9,9 @@ namespace Siesta2
 {
     public static class Helper
     {
-        public static string CnnVal(string name)
+        public static string CnnVal(string Siesta)
         {
-            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+            return ConfigurationManager.ConnectionStrings[Siesta].ConnectionString;
             //www.connectionstrings.com/sql-server/
         }
     }
