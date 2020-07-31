@@ -12,14 +12,20 @@ namespace Siesta2
 {
     public partial class Dashboard : Form
     {
+        List<Recipe> recipes = new List<Recipe>();
         public Dashboard()
         {
             InitializeComponent();
+
+            RecipeListbox.DataSource = recipes;
+            RecipeListbox.DisplayMember = "FullInfo";
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            DataAccess db = new DataAccess();
 
+            recipes = db.GetRecipe(RecipeText.Text);
         }
     }
 }

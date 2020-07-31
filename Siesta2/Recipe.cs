@@ -12,5 +12,12 @@ namespace Siesta2
         public string Name { get; set; }
         public int PreepTime { get; set; }
         public string Instruction { get; set; }
+        public string FullInfo 
+        {
+            get 
+            { 
+                return $"{Name}"; 
+            }
+        }
     }   
 }
