@@ -20,5 +20,13 @@ namespace Siesta2
                 return output;
             }
         }
+
+        public void InsertRecipe(string Name, int PreepTime, string Instruction)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Siesta")))
+            {
+                Recipe newRecipe = new Recipe { Name = Name, PreepTime = PreepTime, Instruction = Instruction };
+            }
+        }
     }
 }

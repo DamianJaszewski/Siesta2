@@ -32,6 +32,13 @@
             this.RecipeText = new System.Windows.Forms.TextBox();
             this.RecipeLbl = new System.Windows.Forms.Label();
             this.RecipeButton = new System.Windows.Forms.Button();
+            this.NameInsLbl = new System.Windows.Forms.Label();
+            this.NameInsTxt = new System.Windows.Forms.TextBox();
+            this.PreepTimeInsLbl = new System.Windows.Forms.Label();
+            this.PreepTimeInsTxt = new System.Windows.Forms.TextBox();
+            this.InstructionInsLbl = new System.Windows.Forms.Label();
+            this.InstructionInsTxt = new System.Windows.Forms.TextBox();
+            this.InsertRecipeBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // RecipeListbox
@@ -39,9 +46,9 @@
             this.RecipeListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RecipeListbox.FormattingEnabled = true;
             this.RecipeListbox.ItemHeight = 20;
-            this.RecipeListbox.Location = new System.Drawing.Point(16, 73);
+            this.RecipeListbox.Location = new System.Drawing.Point(16, 41);
             this.RecipeListbox.Name = "RecipeListbox";
-            this.RecipeListbox.Size = new System.Drawing.Size(295, 264);
+            this.RecipeListbox.Size = new System.Drawing.Size(360, 264);
             this.RecipeListbox.TabIndex = 0;
             // 
             // RecipeText
@@ -49,7 +56,7 @@
             this.RecipeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RecipeText.Location = new System.Drawing.Point(77, 9);
             this.RecipeText.Name = "RecipeText";
-            this.RecipeText.Size = new System.Drawing.Size(234, 26);
+            this.RecipeText.Size = new System.Drawing.Size(211, 26);
             this.RecipeText.TabIndex = 1;
             // 
             // RecipeLbl
@@ -65,7 +72,7 @@
             // RecipeButton
             // 
             this.RecipeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.RecipeButton.Location = new System.Drawing.Point(113, 41);
+            this.RecipeButton.Location = new System.Drawing.Point(294, 9);
             this.RecipeButton.Name = "RecipeButton";
             this.RecipeButton.Size = new System.Drawing.Size(83, 26);
             this.RecipeButton.TabIndex = 3;
@@ -73,11 +80,84 @@
             this.RecipeButton.UseVisualStyleBackColor = true;
             this.RecipeButton.Click += new System.EventHandler(this.button1_Click);
             // 
+            // NameInsLbl
+            // 
+            this.NameInsLbl.AutoSize = true;
+            this.NameInsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NameInsLbl.Location = new System.Drawing.Point(12, 326);
+            this.NameInsLbl.Name = "NameInsLbl";
+            this.NameInsLbl.Size = new System.Drawing.Size(51, 20);
+            this.NameInsLbl.TabIndex = 5;
+            this.NameInsLbl.Text = "Name";
+            // 
+            // NameInsTxt
+            // 
+            this.NameInsTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NameInsTxt.Location = new System.Drawing.Point(113, 320);
+            this.NameInsTxt.Name = "NameInsTxt";
+            this.NameInsTxt.Size = new System.Drawing.Size(263, 26);
+            this.NameInsTxt.TabIndex = 4;
+            // 
+            // PreepTimeInsLbl
+            // 
+            this.PreepTimeInsLbl.AutoSize = true;
+            this.PreepTimeInsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.PreepTimeInsLbl.Location = new System.Drawing.Point(12, 358);
+            this.PreepTimeInsLbl.Name = "PreepTimeInsLbl";
+            this.PreepTimeInsLbl.Size = new System.Drawing.Size(89, 20);
+            this.PreepTimeInsLbl.TabIndex = 7;
+            this.PreepTimeInsLbl.Text = "Preep Time";
+            // 
+            // PreepTimeInsTxt
+            // 
+            this.PreepTimeInsTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.PreepTimeInsTxt.Location = new System.Drawing.Point(113, 352);
+            this.PreepTimeInsTxt.Name = "PreepTimeInsTxt";
+            this.PreepTimeInsTxt.Size = new System.Drawing.Size(263, 26);
+            this.PreepTimeInsTxt.TabIndex = 6;
+            // 
+            // InstructionInsLbl
+            // 
+            this.InstructionInsLbl.AutoSize = true;
+            this.InstructionInsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.InstructionInsLbl.Location = new System.Drawing.Point(12, 390);
+            this.InstructionInsLbl.Name = "InstructionInsLbl";
+            this.InstructionInsLbl.Size = new System.Drawing.Size(84, 20);
+            this.InstructionInsLbl.TabIndex = 9;
+            this.InstructionInsLbl.Text = "Instruction";
+            // 
+            // InstructionInsTxt
+            // 
+            this.InstructionInsTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.InstructionInsTxt.Location = new System.Drawing.Point(113, 384);
+            this.InstructionInsTxt.Multiline = true;
+            this.InstructionInsTxt.Name = "InstructionInsTxt";
+            this.InstructionInsTxt.Size = new System.Drawing.Size(263, 152);
+            this.InstructionInsTxt.TabIndex = 8;
+            // 
+            // InsertRecipeBtn
+            // 
+            this.InsertRecipeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.InsertRecipeBtn.Location = new System.Drawing.Point(16, 510);
+            this.InsertRecipeBtn.Name = "InsertRecipeBtn";
+            this.InsertRecipeBtn.Size = new System.Drawing.Size(85, 26);
+            this.InsertRecipeBtn.TabIndex = 10;
+            this.InsertRecipeBtn.Text = "Insert";
+            this.InsertRecipeBtn.UseVisualStyleBackColor = true;
+            this.InsertRecipeBtn.Click += new System.EventHandler(this.InsertRecipeBtn_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(877, 580);
+            this.Controls.Add(this.InsertRecipeBtn);
+            this.Controls.Add(this.InstructionInsLbl);
+            this.Controls.Add(this.InstructionInsTxt);
+            this.Controls.Add(this.PreepTimeInsLbl);
+            this.Controls.Add(this.PreepTimeInsTxt);
+            this.Controls.Add(this.NameInsLbl);
+            this.Controls.Add(this.NameInsTxt);
             this.Controls.Add(this.RecipeButton);
             this.Controls.Add(this.RecipeLbl);
             this.Controls.Add(this.RecipeText);
@@ -95,6 +175,13 @@
         private System.Windows.Forms.TextBox RecipeText;
         private System.Windows.Forms.Label RecipeLbl;
         private System.Windows.Forms.Button RecipeButton;
+        private System.Windows.Forms.Label NameInsLbl;
+        private System.Windows.Forms.TextBox NameInsTxt;
+        private System.Windows.Forms.Label PreepTimeInsLbl;
+        private System.Windows.Forms.TextBox PreepTimeInsTxt;
+        private System.Windows.Forms.Label InstructionInsLbl;
+        private System.Windows.Forms.TextBox InstructionInsTxt;
+        private System.Windows.Forms.Button InsertRecipeBtn;
     }
 }
 

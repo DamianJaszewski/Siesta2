@@ -33,5 +33,12 @@ namespace Siesta2
 
             UpdateBinding();
         }
+
+        private void InsertRecipeBtn_Click(object sender, EventArgs e)
+        {
+            DataAccess db = new DataAccess();
+
+            db.InsertRecipe(NameInsTxt.Text, PreepTimeInsTxt.Text, InstructionInsTxt.Text);
+        }
     }
 }
