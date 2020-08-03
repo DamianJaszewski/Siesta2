@@ -14,7 +14,7 @@ namespace Siesta2
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Siesta")))
             {
-               var output = connection.Query<Recipe>($"select Name * Recipe where Name = '{Name}'").ToList();
+               var output = connection.Query<Recipe>($"SELECT * FROM Recipe WHERE Name = '{Name}'").ToList();
                return output;
             }
         }

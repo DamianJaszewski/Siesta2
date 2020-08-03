@@ -16,7 +16,7 @@ namespace Siesta2
         {
             get 
             { 
-                return $"{Name}"; 
+                return $"{Name} {PreepTime}"; 
             }
         }
     }   
