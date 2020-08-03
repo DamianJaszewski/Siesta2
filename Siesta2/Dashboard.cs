@@ -16,7 +16,11 @@ namespace Siesta2
         public Dashboard()
         {
             InitializeComponent();
+            UpdateBinding();
+        }
 
+        private void UpdateBinding()
+        {
             RecipeListbox.DataSource = recipes;
             RecipeListbox.DisplayMember = "FullInfo";
         }
@@ -26,6 +30,8 @@ namespace Siesta2
             DataAccess db = new DataAccess();
 
             recipes = db.GetRecipe(RecipeText.Text);
+
+            UpdateBinding();
         }
     }
 }
