@@ -39,6 +39,9 @@
             this.InstructionInsLbl = new System.Windows.Forms.Label();
             this.InstructionInsTxt = new System.Windows.Forms.TextBox();
             this.InsertRecipeBtn = new System.Windows.Forms.Button();
+            this.NameRecipeBox = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.InstructionRecipeBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // RecipeListbox
@@ -146,11 +149,44 @@
             this.InsertRecipeBtn.UseVisualStyleBackColor = true;
             this.InsertRecipeBtn.Click += new System.EventHandler(this.InsertRecipeBtn_Click);
             // 
+            // NameRecipeBox
+            // 
+            this.NameRecipeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NameRecipeBox.FormattingEnabled = true;
+            this.NameRecipeBox.ItemHeight = 20;
+            this.NameRecipeBox.Location = new System.Drawing.Point(419, 41);
+            this.NameRecipeBox.Name = "NameRecipeBox";
+            this.NameRecipeBox.Size = new System.Drawing.Size(360, 44);
+            this.NameRecipeBox.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(415, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Recipe";
+            // 
+            // InstructionRecipeBox
+            // 
+            this.InstructionRecipeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.InstructionRecipeBox.FormattingEnabled = true;
+            this.InstructionRecipeBox.ItemHeight = 20;
+            this.InstructionRecipeBox.Location = new System.Drawing.Point(419, 101);
+            this.InstructionRecipeBox.Name = "InstructionRecipeBox";
+            this.InstructionRecipeBox.Size = new System.Drawing.Size(360, 204);
+            this.InstructionRecipeBox.TabIndex = 13;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 580);
+            this.ClientSize = new System.Drawing.Size(825, 580);
+            this.Controls.Add(this.InstructionRecipeBox);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.NameRecipeBox);
             this.Controls.Add(this.InsertRecipeBtn);
             this.Controls.Add(this.InstructionInsLbl);
             this.Controls.Add(this.InstructionInsTxt);
@@ -182,6 +218,9 @@
         private System.Windows.Forms.Label InstructionInsLbl;
         private System.Windows.Forms.TextBox InstructionInsTxt;
         private System.Windows.Forms.Button InsertRecipeBtn;
+        private System.Windows.Forms.ListBox NameRecipeBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox InstructionRecipeBox;
     }
 }
 
