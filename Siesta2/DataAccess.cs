@@ -11,7 +11,7 @@ namespace Siesta2
     public class DataAccess
     {
 
-        public List<Recipe> GetAllRecipe(string Name)
+        public List<Recipe> GetAllRecipe()
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Siesta")))
             {
@@ -49,6 +49,7 @@ namespace Siesta2
 
         public List<Recipe> GetRecipeDetails(string Name)
         {
+
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Siesta")))
             {
                 //var output = connection.Query<Recipe>($"SELECT * FROM Recipe WHERE Name = '{Name}'").ToList();
@@ -56,6 +57,15 @@ namespace Siesta2
 
                 return output;
             }
+            /*
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Siesta")))
+            {
+                //var output = connection.Query<Recipe>($"SELECT * FROM Recipe WHERE Name = '{Name}'").ToList();
+                var output = connection.Query<Recipe>("dbo.Recipe_GetByName @Name", new { Name = Name }).ToList();
+
+                return output;
+            }
+            */
         }
     }
 }

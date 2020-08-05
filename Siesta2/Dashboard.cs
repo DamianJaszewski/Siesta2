@@ -13,6 +13,7 @@ namespace Siesta2
     public partial class Dashboard : Form
     {
         List<Recipe> recipes = new List<Recipe>();
+        List<Recipe> recipeDetails = new List<Recipe>();
         public Dashboard()
         {
             InitializeComponent();
@@ -20,17 +21,25 @@ namespace Siesta2
             UpdateBinding();
         }
 
+        private void lstRecipe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RecipeDetails();
+        }
+
         private void UpdateBinding()
         {
             RecipeListbox.DataSource = recipes;
             RecipeListbox.DisplayMember = "FullInfo";
+            InstructionListbox.DataSource = recipeDetails;
+            InstructionListbox.DisplayMember = "RecipeDetails";
+
         }
 
         private void AllRecipe()
         {
             DataAccess db = new DataAccess();
 
-            recipes = db.GetAllRecipe(RecipeText.Text);
+            recipes = db.GetAllRecipe();
 
             UpdateBinding();
         }
@@ -40,6 +49,7 @@ namespace Siesta2
             DataAccess db = new DataAccess();
 
             recipes = db.GetRecipe(RecipeText.Text);
+            recipeDetails = db.GetRecipeDetails(RecipeText.Text);
 
             UpdateBinding();
         }
@@ -47,7 +57,7 @@ namespace Siesta2
         private void InsertRecipeBtn_Click(object sender, EventArgs e)
         {
             DataAccess db = new DataAccess();
-            
+
             db.InsertRecipe(NameInsTxt.Text, PreepTimeInsTxt.Text, InstructionInsTxt.Text);
 
             NameInsTxt.Text = "";
@@ -58,6 +68,10 @@ namespace Siesta2
         private void RecipeDetails()
         {
             DataAccess db = new DataAccess();
+
+            recipeDetails = db.GetRecipeDetails(Convert.ToString(RecipeListbox.SelectedValue));
+
+            UpdateBinding();
 
         }
     }

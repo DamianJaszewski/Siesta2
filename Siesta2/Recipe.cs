@@ -19,5 +19,13 @@ namespace Siesta2
                 return $"{Name}"; 
             }
         }
+        public string RecipeDetails
+        {
+            get 
+            {
+                return $"{Instruction}"; 
+            }
+        }
+
     }   
 }
