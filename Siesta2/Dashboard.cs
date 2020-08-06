@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace Siesta2
 {
     public partial class Dashboard : Form
     {
+
         List<Recipe> recipes = new List<Recipe>();
         List<Recipe> recipeDetails = new List<Recipe>();
         public Dashboard()
@@ -19,11 +21,6 @@ namespace Siesta2
             InitializeComponent();
             AllRecipe();
             UpdateBinding();
-        }
-
-        private void lstRecipe_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            RecipeDetails();
         }
 
         private void UpdateBinding()
@@ -65,6 +62,15 @@ namespace Siesta2
             InstructionInsTxt.Text = "";
         }
 
+        private void RecipeListbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataAccess db = new DataAccess();
+           
+
+            UpdateBinding();
+        }
+
+        /*
         private void RecipeDetails()
         {
             DataAccess db = new DataAccess();
@@ -74,5 +80,6 @@ namespace Siesta2
             UpdateBinding();
 
         }
+        */
     }
 }
