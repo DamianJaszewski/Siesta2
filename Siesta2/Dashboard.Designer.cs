@@ -39,8 +39,6 @@
             this.InstructionInsLbl = new System.Windows.Forms.Label();
             this.InstructionInsTxt = new System.Windows.Forms.TextBox();
             this.InsertRecipeBtn = new System.Windows.Forms.Button();
-            this.NameRecipeBox = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.InstructionListbox = new System.Windows.Forms.ListBox();
             this.IngredientInsLbl = new System.Windows.Forms.Label();
             this.IngredientInsTxt = new System.Windows.Forms.TextBox();
@@ -49,6 +47,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.IngredientListbox = new System.Windows.Forms.ListBox();
+            this.AllIngredientListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // RecipeListbox
@@ -56,9 +56,9 @@
             this.RecipeListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RecipeListbox.FormattingEnabled = true;
             this.RecipeListbox.ItemHeight = 16;
-            this.RecipeListbox.Location = new System.Drawing.Point(16, 41);
+            this.RecipeListbox.Location = new System.Drawing.Point(724, 28);
             this.RecipeListbox.Name = "RecipeListbox";
-            this.RecipeListbox.Size = new System.Drawing.Size(360, 260);
+            this.RecipeListbox.Size = new System.Drawing.Size(307, 212);
             this.RecipeListbox.TabIndex = 0;
             this.RecipeListbox.SelectedIndexChanged += new System.EventHandler(this.RecipeListbox_SelectedIndexChanged);
             // 
@@ -67,14 +67,14 @@
             this.RecipeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RecipeText.Location = new System.Drawing.Point(77, 9);
             this.RecipeText.Name = "RecipeText";
-            this.RecipeText.Size = new System.Drawing.Size(211, 26);
+            this.RecipeText.Size = new System.Drawing.Size(225, 26);
             this.RecipeText.TabIndex = 1;
             // 
             // RecipeLbl
             // 
             this.RecipeLbl.AutoSize = true;
             this.RecipeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.RecipeLbl.Location = new System.Drawing.Point(12, 15);
+            this.RecipeLbl.Location = new System.Drawing.Point(12, 12);
             this.RecipeLbl.Name = "RecipeLbl";
             this.RecipeLbl.Size = new System.Drawing.Size(59, 20);
             this.RecipeLbl.TabIndex = 2;
@@ -83,7 +83,7 @@
             // RecipeButton
             // 
             this.RecipeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.RecipeButton.Location = new System.Drawing.Point(294, 9);
+            this.RecipeButton.Location = new System.Drawing.Point(219, 41);
             this.RecipeButton.Name = "RecipeButton";
             this.RecipeButton.Size = new System.Drawing.Size(83, 26);
             this.RecipeButton.TabIndex = 3;
@@ -95,7 +95,7 @@
             // 
             this.NameInsLbl.AutoSize = true;
             this.NameInsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NameInsLbl.Location = new System.Drawing.Point(12, 326);
+            this.NameInsLbl.Location = new System.Drawing.Point(332, 28);
             this.NameInsLbl.Name = "NameInsLbl";
             this.NameInsLbl.Size = new System.Drawing.Size(51, 20);
             this.NameInsLbl.TabIndex = 5;
@@ -104,7 +104,7 @@
             // NameInsTxt
             // 
             this.NameInsTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NameInsTxt.Location = new System.Drawing.Point(113, 326);
+            this.NameInsTxt.Location = new System.Drawing.Point(433, 28);
             this.NameInsTxt.Name = "NameInsTxt";
             this.NameInsTxt.Size = new System.Drawing.Size(263, 23);
             this.NameInsTxt.TabIndex = 4;
@@ -113,7 +113,7 @@
             // 
             this.PreepTimeInsLbl.AutoSize = true;
             this.PreepTimeInsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.PreepTimeInsLbl.Location = new System.Drawing.Point(12, 358);
+            this.PreepTimeInsLbl.Location = new System.Drawing.Point(332, 60);
             this.PreepTimeInsLbl.Name = "PreepTimeInsLbl";
             this.PreepTimeInsLbl.Size = new System.Drawing.Size(89, 20);
             this.PreepTimeInsLbl.TabIndex = 7;
@@ -122,7 +122,7 @@
             // PreepTimeInsTxt
             // 
             this.PreepTimeInsTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.PreepTimeInsTxt.Location = new System.Drawing.Point(113, 358);
+            this.PreepTimeInsTxt.Location = new System.Drawing.Point(433, 60);
             this.PreepTimeInsTxt.Name = "PreepTimeInsTxt";
             this.PreepTimeInsTxt.Size = new System.Drawing.Size(263, 23);
             this.PreepTimeInsTxt.TabIndex = 6;
@@ -131,7 +131,7 @@
             // 
             this.InstructionInsLbl.AutoSize = true;
             this.InstructionInsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.InstructionInsLbl.Location = new System.Drawing.Point(12, 390);
+            this.InstructionInsLbl.Location = new System.Drawing.Point(332, 92);
             this.InstructionInsLbl.Name = "InstructionInsLbl";
             this.InstructionInsLbl.Size = new System.Drawing.Size(84, 20);
             this.InstructionInsLbl.TabIndex = 9;
@@ -140,7 +140,7 @@
             // InstructionInsTxt
             // 
             this.InstructionInsTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.InstructionInsTxt.Location = new System.Drawing.Point(113, 387);
+            this.InstructionInsTxt.Location = new System.Drawing.Point(433, 89);
             this.InstructionInsTxt.Multiline = true;
             this.InstructionInsTxt.Name = "InstructionInsTxt";
             this.InstructionInsTxt.Size = new System.Drawing.Size(263, 152);
@@ -149,7 +149,7 @@
             // InsertRecipeBtn
             // 
             this.InsertRecipeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.InsertRecipeBtn.Location = new System.Drawing.Point(16, 510);
+            this.InsertRecipeBtn.Location = new System.Drawing.Point(336, 212);
             this.InsertRecipeBtn.Name = "InsertRecipeBtn";
             this.InsertRecipeBtn.Size = new System.Drawing.Size(85, 26);
             this.InsertRecipeBtn.TabIndex = 10;
@@ -157,42 +157,22 @@
             this.InsertRecipeBtn.UseVisualStyleBackColor = true;
             this.InsertRecipeBtn.Click += new System.EventHandler(this.InsertRecipeBtn_Click);
             // 
-            // NameRecipeBox
-            // 
-            this.NameRecipeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NameRecipeBox.FormattingEnabled = true;
-            this.NameRecipeBox.ItemHeight = 16;
-            this.NameRecipeBox.Location = new System.Drawing.Point(419, 41);
-            this.NameRecipeBox.Name = "NameRecipeBox";
-            this.NameRecipeBox.Size = new System.Drawing.Size(360, 36);
-            this.NameRecipeBox.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(415, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Recipe";
-            // 
             // InstructionListbox
             // 
             this.InstructionListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.InstructionListbox.FormattingEnabled = true;
             this.InstructionListbox.IntegralHeight = false;
             this.InstructionListbox.ItemHeight = 16;
-            this.InstructionListbox.Location = new System.Drawing.Point(419, 83);
+            this.InstructionListbox.Location = new System.Drawing.Point(17, 246);
             this.InstructionListbox.Name = "InstructionListbox";
-            this.InstructionListbox.Size = new System.Drawing.Size(360, 218);
+            this.InstructionListbox.Size = new System.Drawing.Size(285, 219);
             this.InstructionListbox.TabIndex = 13;
             // 
             // IngredientInsLbl
             // 
             this.IngredientInsLbl.AutoSize = true;
             this.IngredientInsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.IngredientInsLbl.Location = new System.Drawing.Point(415, 326);
+            this.IngredientInsLbl.Location = new System.Drawing.Point(340, 268);
             this.IngredientInsLbl.Name = "IngredientInsLbl";
             this.IngredientInsLbl.Size = new System.Drawing.Size(81, 20);
             this.IngredientInsLbl.TabIndex = 15;
@@ -201,16 +181,16 @@
             // IngredientInsTxt
             // 
             this.IngredientInsTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.IngredientInsTxt.Location = new System.Drawing.Point(516, 326);
+            this.IngredientInsTxt.Location = new System.Drawing.Point(344, 291);
             this.IngredientInsTxt.Name = "IngredientInsTxt";
-            this.IngredientInsTxt.Size = new System.Drawing.Size(263, 23);
+            this.IngredientInsTxt.Size = new System.Drawing.Size(207, 23);
             this.IngredientInsTxt.TabIndex = 14;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(415, 390);
+            this.label2.Location = new System.Drawing.Point(625, 268);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 20);
             this.label2.TabIndex = 17;
@@ -219,16 +199,16 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(516, 355);
+            this.textBox1.Location = new System.Drawing.Point(557, 291);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(263, 23);
+            this.textBox1.Size = new System.Drawing.Size(37, 23);
             this.textBox1.TabIndex = 16;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(415, 358);
+            this.label3.Location = new System.Drawing.Point(541, 268);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 20);
             this.label3.TabIndex = 19;
@@ -237,27 +217,49 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(516, 387);
-            this.textBox2.Multiline = true;
+            this.textBox2.Location = new System.Drawing.Point(600, 291);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(263, 149);
+            this.textBox2.Size = new System.Drawing.Size(96, 23);
             this.textBox2.TabIndex = 18;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(419, 510);
+            this.button1.Location = new System.Drawing.Point(644, 439);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 26);
+            this.button1.Size = new System.Drawing.Size(52, 26);
             this.button1.TabIndex = 20;
-            this.button1.Text = "Insert";
+            this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // IngredientListbox
+            // 
+            this.IngredientListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.IngredientListbox.FormattingEnabled = true;
+            this.IngredientListbox.IntegralHeight = false;
+            this.IngredientListbox.ItemHeight = 16;
+            this.IngredientListbox.Location = new System.Drawing.Point(17, 73);
+            this.IngredientListbox.Name = "IngredientListbox";
+            this.IngredientListbox.Size = new System.Drawing.Size(285, 167);
+            this.IngredientListbox.TabIndex = 21;
+            // 
+            // AllIngredientListBox
+            // 
+            this.AllIngredientListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AllIngredientListBox.FormattingEnabled = true;
+            this.AllIngredientListBox.ItemHeight = 16;
+            this.AllIngredientListBox.Location = new System.Drawing.Point(724, 246);
+            this.AllIngredientListBox.Name = "AllIngredientListBox";
+            this.AllIngredientListBox.Size = new System.Drawing.Size(307, 212);
+            this.AllIngredientListBox.TabIndex = 22;
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 580);
+            this.ClientSize = new System.Drawing.Size(1064, 515);
+            this.Controls.Add(this.AllIngredientListBox);
+            this.Controls.Add(this.IngredientListbox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
@@ -266,8 +268,6 @@
             this.Controls.Add(this.IngredientInsLbl);
             this.Controls.Add(this.IngredientInsTxt);
             this.Controls.Add(this.InstructionListbox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.NameRecipeBox);
             this.Controls.Add(this.InsertRecipeBtn);
             this.Controls.Add(this.InstructionInsLbl);
             this.Controls.Add(this.InstructionInsTxt);
@@ -299,8 +299,6 @@
         private System.Windows.Forms.Label InstructionInsLbl;
         private System.Windows.Forms.TextBox InstructionInsTxt;
         private System.Windows.Forms.Button InsertRecipeBtn;
-        private System.Windows.Forms.ListBox NameRecipeBox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox InstructionListbox;
         private System.Windows.Forms.Label IngredientInsLbl;
         private System.Windows.Forms.TextBox IngredientInsTxt;
@@ -309,6 +307,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox IngredientListbox;
+        private System.Windows.Forms.ListBox AllIngredientListBox;
     }
 }
 

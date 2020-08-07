@@ -47,6 +47,29 @@ namespace Siesta2
             }
         }
 
+        public List<Ingredient> GetAllIngredient()
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Siesta")))
+            {
+                //var output = connection.Query<Recipe>($"SELECT * FROM Recipe WHERE Name = '{Name}'").ToList();
+                var output = connection.Query<Ingredient>("dbo.Ingredient_GetAllIngredient").ToList();
+
+                return output;
+            }
+        }
+
+        public void InsertIngredient(string Name)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Siesta")))
+            {
+                List<Recipe> ingredient = new List<Recipe>();
+
+                ingredient.Add(new Recipe { Name = Name});
+
+                connection.Execute("dbo.Ingredient_Insert @Name", ingredient);
+            }
+        }
+
         public List<Recipe> GetRecipeDetails(string Name)
         {
 

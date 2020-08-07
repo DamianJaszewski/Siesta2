@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -15,11 +16,14 @@ namespace Siesta2
     {
 
         List<Recipe> recipes = new List<Recipe>();
+        List<Ingredient> ingredient = new List<Ingredient>();
         List<Recipe> recipeDetails = new List<Recipe>();
+
         public Dashboard()
         {
             InitializeComponent();
             AllRecipe();
+            AllIngredient();
             UpdateBinding();
         }
 
@@ -27,6 +31,8 @@ namespace Siesta2
         {
             RecipeListbox.DataSource = recipes;
             RecipeListbox.DisplayMember = "FullInfo";
+            AllIngredientListBox.DataSource = ingredient;
+            AllIngredientListBox.DisplayMember = "IngredientInfo";
             InstructionListbox.DataSource = recipeDetails;
             InstructionListbox.DisplayMember = "RecipeDetails";
 
@@ -37,6 +43,15 @@ namespace Siesta2
             DataAccess db = new DataAccess();
 
             recipes = db.GetAllRecipe();
+
+            UpdateBinding();
+        }
+
+        private void AllIngredient()
+        {
+            DataAccess db = new DataAccess();
+
+            ingredient = db.GetAllIngredient();
 
             UpdateBinding();
         }
@@ -65,7 +80,6 @@ namespace Siesta2
         private void RecipeListbox_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataAccess db = new DataAccess();
-           
 
             UpdateBinding();
         }
