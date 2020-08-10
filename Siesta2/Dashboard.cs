@@ -18,6 +18,7 @@ namespace Siesta2
         List<Recipe> recipes = new List<Recipe>();
         List<Ingredient> ingredient = new List<Ingredient>();
         List<Recipe> recipeDetails = new List<Recipe>();
+        List<RecipeIngredient> recipeIngredients = new List<RecipeIngredient>();
 
         public Dashboard()
         {
@@ -35,6 +36,8 @@ namespace Siesta2
             AllIngredientListBox.DisplayMember = "IngredientInfo";
             InstructionListbox.DataSource = recipeDetails;
             InstructionListbox.DisplayMember = "RecipeDetails";
+            IngredientListbox.DataSource = recipeIngredients;
+            IngredientListbox.DisplayMember = "IngredientInfo";
 
         }
 
@@ -61,7 +64,8 @@ namespace Siesta2
             DataAccess db = new DataAccess();
 
             recipes = db.GetRecipe(RecipeText.Text);
-            recipeDetails = db.GetRecipeDetails(RecipeText.Text);
+            recipeDetails = db.GetRecipeIngredient(RecipeText.Text);
+            recipeIngredients = db.GetRecipeDetails(RecipeText.Text);
 
             UpdateBinding();
         }

@@ -13,5 +13,14 @@ namespace Siesta2
         public int Id_Measure { get; set; }
         public int Id_Recipe { get; set; }
         public int Id_Ingredient { get; set; }
+
+        public string IngredientInfo
+        {
+            get
+            {
+                return $"{Id_Ingredient}";
+            }
+        }
+
     }
 }

@@ -70,13 +70,34 @@ namespace Siesta2
             }
         }
 
-        public List<Recipe> GetRecipeDetails(string Name)
+        public List<Recipe> GetRecipeIngredient(string Name)
         {
 
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Siesta")))
             {
                 //var output = connection.Query<Recipe>($"SELECT * FROM Recipe WHERE Name = '{Name}'").ToList();
                 var output = connection.Query<Recipe>("dbo.Recipe_GetByName @Name", new { Name = Name }).ToList();
+
+                return output;
+            }
+            /*
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Siesta")))
+            {
+                //var output = connection.Query<Recipe>($"SELECT * FROM Recipe WHERE Name = '{Name}'").ToList();
+                var output = connection.Query<Recipe>("dbo.Recipe_GetByName @Name", new { Name = Name }).ToList();
+
+                return output;
+            }
+            */
+        }
+
+        public List<RecipeIngredient> GetRecipeDetails(string Name)
+        {
+
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Siesta")))
+            {
+                //var output = connection.Query<Recipe>($"SELECT * FROM Recipe WHERE Name = '{Name}'").ToList();
+                var output = connection.Query<RecipeIngredient>("dbo.Details_GetIngredientDetails @Name", new { Name = Name }).ToList();
 
                 return output;
             }
