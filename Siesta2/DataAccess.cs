@@ -47,6 +47,21 @@ namespace Siesta2
             }
         }
 
+        public void InsertRecipeDetails(string Name, string PreepTime, string Instruction)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Siesta")))
+            {
+                //Recipe newRecipe = new Recipe { Name = Name, PreepTime = Convert.ToInt32(PreepTime), Instruction = Instruction };
+                //newRecipe.Name = Name;
+
+                List<Recipe> recipe = new List<Recipe>();
+
+                recipe.Add(new Recipe { Name = Name, PreepTime = Convert.ToInt32(PreepTime), Instruction = Instruction });
+
+                connection.Execute("dbo.Recipe_Insert @Name, @PreepTime, @Instruction", recipe);
+            }
+        }
+
         public List<Ingredient> GetAllIngredient()
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Siesta")))
@@ -90,26 +105,29 @@ namespace Siesta2
             }
             */
         }
-
-        public List<RecipeIngredient> GetRecipeDetails(string Name)
+        public List<Ingredient> GetRecipeDetails(string Name)
         {
-
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Siesta")))
             {
-                //var output = connection.Query<Recipe>($"SELECT * FROM Recipe WHERE Name = '{Name}'").ToList();
-                var output = connection.Query<RecipeIngredient>("dbo.Details_GetIngredientDetails @Name", new { Name = Name }).ToList();
-
+                var output = connection.Query<Ingredient>("dbo.Details_GetIngredientDetails @Name", new { Name = Name }).ToList();
                 return output;
             }
-            /*
+        }
+        public List<Measure> GetMeasureDetails(string Name)
+        {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Siesta")))
             {
-                //var output = connection.Query<Recipe>($"SELECT * FROM Recipe WHERE Name = '{Name}'").ToList();
-                var output = connection.Query<Recipe>("dbo.Recipe_GetByName @Name", new { Name = Name }).ToList();
-
+                var output = connection.Query<Measure>("dbo.Details_GetMeasureDetails @Name", new { Name = Name }).ToList();
                 return output;
             }
-            */
+        }
+        public List<RecipeIngredient> GetQuantityDetails(string Name)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Siesta")))
+            {
+                var output = connection.Query<RecipeIngredient>("dbo.Details_GetMeasureDetails @Name", new { Name = Name }).ToList();
+                return output;
+            }
         }
     }
 }

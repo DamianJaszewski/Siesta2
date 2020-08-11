@@ -18,7 +18,9 @@ namespace Siesta2
         List<Recipe> recipes = new List<Recipe>();
         List<Ingredient> ingredient = new List<Ingredient>();
         List<Recipe> recipeDetails = new List<Recipe>();
-        List<RecipeIngredient> recipeIngredients = new List<RecipeIngredient>();
+        List<Ingredient> recipeIngredients =new List<Ingredient>();
+        List<Measure> measure = new List<Measure>();
+        List<RecipeIngredient> quantity = new List<RecipeIngredient>();
 
         public Dashboard()
         {
@@ -33,11 +35,15 @@ namespace Siesta2
             RecipeListbox.DataSource = recipes;
             RecipeListbox.DisplayMember = "FullInfo";
             AllIngredientListBox.DataSource = ingredient;
-            AllIngredientListBox.DisplayMember = "IngredientInfo";
+            AllIngredientListBox.DisplayMember = "IngredientInfoName";
             InstructionListbox.DataSource = recipeDetails;
             InstructionListbox.DisplayMember = "RecipeDetails";
             IngredientListbox.DataSource = recipeIngredients;
-            IngredientListbox.DisplayMember = "IngredientInfo";
+            IngredientListbox.DisplayMember = "IngredientInfoName";
+            MeasureListbox.DataSource = measure;
+            MeasureListbox.DisplayMember = "MeasureInfo";
+            QuantityListbox.DataSource = quantity;
+            QuantityListbox.DisplayMember = "QuantityInfo";
 
         }
 
@@ -66,6 +72,8 @@ namespace Siesta2
             recipes = db.GetRecipe(RecipeText.Text);
             recipeDetails = db.GetRecipeIngredient(RecipeText.Text);
             recipeIngredients = db.GetRecipeDetails(RecipeText.Text);
+            measure = db.GetMeasureDetails(RecipeText.Text);
+            quantity = db.GetQuantityDetails(RecipeText.Text);
 
             UpdateBinding();
         }
@@ -88,16 +96,15 @@ namespace Siesta2
             UpdateBinding();
         }
 
-        /*
-        private void RecipeDetails()
+        private void InsertDetailsBtn_Click(object sender, EventArgs e)
         {
             DataAccess db = new DataAccess();
 
-            recipeDetails = db.GetRecipeDetails(Convert.ToString(RecipeListbox.SelectedValue));
+            db.InsertRecipeDetails(NameInsTxt.Text, PreepTimeInsTxt.Text, InstructionInsTxt.Text);
 
-            UpdateBinding();
-
+            NameInsTxt.Text = "";
+            PreepTimeInsTxt.Text = "";
+            InstructionInsTxt.Text = "";
         }
-        */
     }
 }

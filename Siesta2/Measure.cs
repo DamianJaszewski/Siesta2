@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Siesta2
 {
-    public class Ingredient
+    public class Measure
     {
-        public int Id_Ingredient { get; set; }
+        public int Id_Measure { get; set; }
         public string Name { get; set; }
-        public string IngredientInfoName
+        public string MeasureInfo
         {
             get
             {

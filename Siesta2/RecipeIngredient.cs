@@ -14,11 +14,11 @@ namespace Siesta2
         public int Id_Recipe { get; set; }
         public int Id_Ingredient { get; set; }
 
-        public string IngredientInfo
+        public string QuantityInfo
         {
             get
             {
-                return $"{Id_Ingredient}";
+                return $"{Quantity}";
             }
         }
 
