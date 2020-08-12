@@ -43,9 +43,9 @@
             this.IngredientInsLbl = new System.Windows.Forms.Label();
             this.IngredientInsTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.QuantityInsTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.MeasureInsTxt = new System.Windows.Forms.TextBox();
             this.InsertDetailsBtn = new System.Windows.Forms.Button();
             this.IngredientListbox = new System.Windows.Forms.ListBox();
             this.AllIngredientListBox = new System.Windows.Forms.ListBox();
@@ -198,13 +198,13 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "Measure";
             // 
-            // textBox1
+            // QuantityInsTxt
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(557, 291);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(37, 23);
-            this.textBox1.TabIndex = 16;
+            this.QuantityInsTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.QuantityInsTxt.Location = new System.Drawing.Point(557, 291);
+            this.QuantityInsTxt.Name = "QuantityInsTxt";
+            this.QuantityInsTxt.Size = new System.Drawing.Size(37, 23);
+            this.QuantityInsTxt.TabIndex = 16;
             // 
             // label3
             // 
@@ -216,13 +216,13 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Quantity";
             // 
-            // textBox2
+            // MeasureInsTxt
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(600, 291);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(96, 23);
-            this.textBox2.TabIndex = 18;
+            this.MeasureInsTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.MeasureInsTxt.Location = new System.Drawing.Point(600, 291);
+            this.MeasureInsTxt.Name = "MeasureInsTxt";
+            this.MeasureInsTxt.Size = new System.Drawing.Size(96, 23);
+            this.MeasureInsTxt.TabIndex = 18;
             // 
             // InsertDetailsBtn
             // 
@@ -289,9 +289,9 @@
             this.Controls.Add(this.IngredientListbox);
             this.Controls.Add(this.InsertDetailsBtn);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.MeasureInsTxt);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.QuantityInsTxt);
             this.Controls.Add(this.IngredientInsLbl);
             this.Controls.Add(this.IngredientInsTxt);
             this.Controls.Add(this.InstructionListbox);
@@ -330,9 +330,9 @@
         private System.Windows.Forms.Label IngredientInsLbl;
         private System.Windows.Forms.TextBox IngredientInsTxt;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox QuantityInsTxt;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox MeasureInsTxt;
         private System.Windows.Forms.Button InsertDetailsBtn;
         private System.Windows.Forms.ListBox IngredientListbox;
         private System.Windows.Forms.ListBox AllIngredientListBox;

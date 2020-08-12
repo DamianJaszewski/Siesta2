@@ -100,11 +100,12 @@ namespace Siesta2
         {
             DataAccess db = new DataAccess();
 
-            db.InsertRecipeDetails(NameInsTxt.Text, PreepTimeInsTxt.Text, InstructionInsTxt.Text);
+            db.InsertRecipeDetails(QuantityInsTxt.Text, MeasureInsTxt.Text, NameInsTxt.Text, IngredientInsTxt.Text);
 
+            QuantityInsTxt.Text = "";
+            MeasureInsTxt.Text = "";
             NameInsTxt.Text = "";
-            PreepTimeInsTxt.Text = "";
-            InstructionInsTxt.Text = "";
+            IngredientInsTxt.Text = "";
         }
     }
 }

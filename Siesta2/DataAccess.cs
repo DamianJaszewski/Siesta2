@@ -47,18 +47,19 @@ namespace Siesta2
             }
         }
 
-        public void InsertRecipeDetails(string Name, string PreepTime, string Instruction)
+        public void InsertRecipeDetails(string Quantity, string Id_Measure, string Id_Recipe, string Id_Ingredient)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Siesta")))
             {
-                //Recipe newRecipe = new Recipe { Name = Name, PreepTime = Convert.ToInt32(PreepTime), Instruction = Instruction };
-                //newRecipe.Name = Name;
+                List<RecipeIngredient> recipeDetails = new List<RecipeIngredient>();
 
-                List<Recipe> recipe = new List<Recipe>();
+                //Ingredient List<Ingredient>
+                //Quantity List<RecipeIngredient>
+                //Measure List<Measure>
 
-                recipe.Add(new Recipe { Name = Name, PreepTime = Convert.ToInt32(PreepTime), Instruction = Instruction });
+                recipeDetails.Add(new RecipeIngredient { Quantity = Convert.ToDecimal(Quantity), Id_Measure = Convert.ToInt32(Id_Measure), Id_Recipe = Convert.ToInt32(Id_Recipe), Id_Ingredient = Convert.ToInt32(Id_Ingredient) });
 
-                connection.Execute("dbo.Recipe_Insert @Name, @PreepTime, @Instruction", recipe);
+                connection.Execute("dbo.Details_Insert @Quantity, @Id_Measure, @Id_Recipe, @Id_Ingredient", recipeDetails);
             }
         }
 
