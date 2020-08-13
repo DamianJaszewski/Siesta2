@@ -69,7 +69,6 @@ namespace Siesta2
         {
             DataAccess db = new DataAccess();
 
-            recipes = db.GetRecipe(RecipeText.Text);
             recipeDetails = db.GetRecipeIngredient(RecipeText.Text);
             recipeIngredients = db.GetRecipeDetails(RecipeText.Text);
             measure = db.GetMeasureDetails(RecipeText.Text);

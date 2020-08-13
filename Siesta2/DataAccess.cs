@@ -47,7 +47,7 @@ namespace Siesta2
             }
         }
 
-        public void InsertRecipeDetails(string Quantity, string Id_Measure, string Id_Recipe, string Id_Ingredient)
+        public void InsertRecipeDetails(string Quantity, string NameMeasure, string NameRecipe, string NameIngredient)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Siesta")))
             {
@@ -56,10 +56,13 @@ namespace Siesta2
                 //Ingredient List<Ingredient>
                 //Quantity List<RecipeIngredient>
                 //Measure List<Measure>
+                //($"SELECT Id_Measure FROM Measure WHERE Name = '{Id_Measure}'")
 
-                recipeDetails.Add(new RecipeIngredient { Quantity = Convert.ToDecimal(Quantity), Id_Measure = Convert.ToInt32(Id_Measure), Id_Recipe = Convert.ToInt32(Id_Recipe), Id_Ingredient = Convert.ToInt32(Id_Ingredient) });
+               // var measure = connection.Query<Measure>($"SELECT Id_Measure FROM Measure WHERE Name = '{Id_Measure}'").;
 
-                connection.Execute("dbo.Details_Insert @Quantity, @Id_Measure, @Id_Recipe, @Id_Ingredient", recipeDetails);
+                recipeDetails.Add(new RecipeIngredient{ Quantity = Convert.ToDecimal(Quantity), Id_Measure = NameMeasure, Id_Recipe = NameRecipe, Id_Ingredient = NameIngredient });
+
+                connection.Execute("dbo.Details_Insert3 @Quantity, @Id_Measure, @Id_Recipe, @Id_Ingredient", recipeDetails);    
             }
         }
 
